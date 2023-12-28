@@ -1,0 +1,58 @@
+{% extends "./base.html" %} {% block body %} {% load static %}
+
+<!-- Section: inner-header -->
+<section class="inner-header divider parallax layer-overlay overlay-dark-5">
+    <div class="container pt-20 pb-20">
+        <!-- Section Content -->
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="title text-white">Blogs</h4>
+                    <!-- <ul class="breadcrumb white">
+                <li><a class="text-white" href="/arogyam/">arogyam</a></li>
+                <li class="active">Events</li>
+              </ul> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-content">
+            <div class="row multi-row-clearfix">
+
+                {% for i in blogs%}
+                <div class="col-xs-12 col-sm-6 col-md-4 wow fadeInLeft mb-10" data-wow-duration="1s"
+                    data-wow-delay="0.3s">
+                    <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                        <div class="entry-header">
+                            <div class="post-thumb thumb">
+                                <img src="https://www.bkarogyam.com/media/{{i.featured_image}}" alt=""
+                                    class="img-responsive img-fullwidth">
+                            </div>
+                        </div>
+                        <div class="entry-content p-20">
+                            <h4 class="entry-title text-white text-uppercase heading"><a class="font-weight-600"
+                                    href="{% url 'blogs_details' b_id=i.slug %}">{{i.title}}</a></h4>
+                            <div class="entry-meta">
+                                <ul class="list-inline font-12 mb-10">
+                                    <li><i class="fa fa-user text-theme-colored mr-5"></i>By: Bk Arogyam / </li>
+                                    <li><i class="fa fa-calendar text-theme-colored mr-5"></i>{{i.updated_on}}</li>
+                                </ul>
+                            </div>
+                            <p class="mt-5 max-lines">{{i.content|striptags}}</p>
+                            <a style="width: 100%;" class="btn btn-theme-colored btn-sm mt-10" href="{% url 'blogs_details' b_id=i.slug %}">
+                                View
+                                Details</a>
+                        </div>
+                    </article>
+                </div>
+                {% endfor%}
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

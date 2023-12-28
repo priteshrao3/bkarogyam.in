@@ -1,0 +1,852 @@
+{% extends 'base.html' %} {% block body %} {% load static %}
+
+<style>
+  .bharat {
+    background: -webkit-linear-gradient(186deg, #138808, #FFFFFF, #FF9933);
+    -webkit-background-clip: text;
+    text-shadow: 0px 0px 45px white;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .pair_box {
+    border-radius: 10px;
+  }
+</style>
+
+
+
+<!-- Section: home -->
+<section id="home">
+  <div class="owl-carousel-1col" data-nav="true">
+    {% for i in slider%}
+    <div class="item">
+      <img src="https://www.bkarogyam.com/media/{{i.silder_image}}" alt="Slider image">
+    </div>
+    {%endfor%}
+  </div>
+</section>
+
+
+
+<!-- Section: imp-service -->
+<section id="imp-service">
+  <div class="wow" style="padding: 20px;" data-wow-duration="1s" data-wow-delay="0.3s">
+    <div class="row multi-row-clearfix">
+      <div class="col-md-12">
+
+        <div class="owl-carousel" data-dots="false">
+          <div class="item">
+            <a href="https://patient.bkarogyam.com/">
+              <img class="pair_box" src="{% static 'images/book/book appoinment (1).jpg' %}">
+            </a>
+          </div>
+
+          <div class="item">
+            <a href="http://shop.arogyambharat.com/category.html?pcategory=72">
+              <img class="pair_box" src="{% static 'images/book/lab Appoinment (1).jpg' %}">
+            </a>
+          </div>
+
+          <div class="item">
+            <a href="http://shop.arogyambharat.com/" target="_blank">
+              <img class="pair_box" src="{% static 'images/book/buy product (1).jpg' %}">
+            </a>
+          </div>
+
+          <div class="item">
+            <a href="{% url 'diseases'%}">
+              <img class="pair_box" src="{% static 'images/book/disease (1).jpg' %}">
+            </a>
+          </div>
+
+        </div>
+
+        <!-- <div class="owl-carousel-4col" data-dots="false">
+
+          <div class="item">
+            <div style="text-align: center;" class="campaign bg-silver-light maxwidth500 thumb">
+              <a href="https://patient.bkarogyam.com/">
+                <img class="pair_box" src="{% static 'images/book/book appoinment (1).jpg' %}">
+              </a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div style="text-align: center;" class="campaign bg-silver-light maxwidth500 thumb">
+              <a href="http://shop.arogyambharat.com/category.html?pcategory=64">
+                <img class="pair_box" src="{% static 'images/book/lab Appoinment (1).jpg' %}">
+              </a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div style="text-align: center;" class="campaign bg-silver-light maxwidth500 thumb">
+              <a href="http://shop.arogyambharat.com/" target="_blank">
+                <img class="pair_box" src="{% static 'images/book/buy product (1).jpg' %}">
+              </a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div style="text-align: center;" class="campaign bg-silver-light maxwidth500 thumb">
+              <a href="{% url 'diseases'%}">
+                <img class="pair_box" src="{% static 'images/book/disease (1).jpg' %}">
+              </a>
+            </div>
+          </div>
+
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section: intro  -->
+<section class="bg-lighter">
+  <div class="container wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-6">
+          <img style="border-radius: 10px;" class="img-fullwidth" src="{% static 'images/about-us/bkfront.jpg' %}"
+            alt="">
+          <h3 class="mt-20 mt-0 font-weight-600">Who <span class="text-theme-colored ">We
+            </span>Are ?</h3>
+          <p>B.K. Arogyam is a purely Ayurveda based healthcare and research center. It is successfully
+            operating since
+            1979 and spreading awareness for Ayurveda in all over the world. It is been able to cure
+            patients and give
+            them relieve from their deadly conditions from last 41 long years. We have researched and found
+            medicines
+            and treatments to cure.</p>
+          <a class="text-theme-colored font-13" href="{% url 'about'%}">Read More →</a>
+        </div>
+        <div class="col-md-6">
+          <h3 class="mt-20 mt-0 font-weight-600">Enhancing <span class="text-theme-colored ">Ayurveda
+            </span>as a Global Pioneer </h3>
+          <p>
+            B.K.Arogyam works on symbolizing the reliability and efficacy of holistic Ayurvedic
+            approaches towards modern society ailments and promotes wellness. With a perfect combination of
+            medicines, diet, and lifestyle, and extensive research as well as mankind's service, we stand as
+            a
+            global pioneer in proffering well-being and peace in society.
+          </p>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <div class="icon-box p-0 mb-30">
+                <a style="border-radius: 5px;"
+                  class="icon icon-sm pull-left sm-pull-none flip bg-theme-colored mb-sm-15 mb-0 mr-10"
+                  href="http://arogyambharat.com/" target="_blank">
+                  <i class="pe-7s-display1 text-white font-36"></i>
+                </a>
+                <h4 class="icon-box-title m-0 mb-5">Business Opportunities</h4>
+                <p class="text-gray mb-5 max-lines">We provide extensive business opportunities to
+                  institutions and
+                  individuals letting them serve mankind through holistic approaches and increasing
+                  operational
+                  revenues.
+                </p>
+                <a href="http://arogyambharat.com/" target="_blank" class="text-theme-colored font-13">Read
+                  More →</a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <div class="icon-box p-0 mb-30">
+                <a style="border-radius: 5px;"
+                  class="icon icon-sm pull-left sm-pull-none flip bg-theme-colored mb-sm-15 mb-0 mr-10"
+                  href="{% url 'about'%}">
+                  <i class="pe-7s-leaf text-white font-36"></i>
+                </a>
+                <a href="{% url 'about'%}">
+                  <h4 class="icon-box-title m-0 mb-5">Ayurveda</h4>
+                </a>
+                <p class="text-gray mb-5 max-lines">We follow the oldest traditional methods to provide
+                  natural care to
+                  an
+                  ailment and heal it with pure authentic and appropriate Ayurvedic remedies for better
+                  efficacy.
+                </p>
+                <a href="{% url 'about'%}" class="text-theme-colored font-13">Read More →</a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <div class="icon-box p-0 mb-sm-30">
+                <a style="border-radius: 5px;"
+                  class="icon icon-sm pull-left sm-pull-none flip bg-theme-colored mb-sm-15 mb-0 mr-10"
+                  href="http://bkarogyadham.in/" target="_blank">
+                  <i class="pe-7s-cash text-white font-36"></i>
+                </a>
+                <a href="http://bkarogyadham.in/" target="_blank">
+                  <h4 class="icon-box-title m-0 mb-5">Donation</h4>
+                </a>
+                <p class="text-gray mb-5 max-lines">As a part of serving wellness, we also take part
+                  actively in
+                  contributing
+                  to the needs of the society in all aspects, by putting morals and ethics at first
+                  preference.
+                </p>
+                <a href="http://bkarogyadham.in/" target="_blank" class="text-theme-colored font-13">Read More
+                  →</a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <div class="icon-box p-0">
+                <a style="border-radius: 5px;"
+                  class="icon icon-sm pull-left sm-pull-none flip bg-theme-colored mb-sm-15 mb-0 mr-10"
+                  href="http://shop.arogyambharat.com/" target="_blank">
+                  <i class="pe-7s-shopbag text-white font-36"></i>
+                </a>
+                <a href="http://shop.arogyambharat.com/" target="_blank">
+                  <h4 class="icon-box-title m-0 mb-5">E-Shop</h4>
+                </a>
+                <p class="text-gray mb-5 max-lines">You will get all our self-formulated herbal medications
+                  at the best
+                  affordable price, which makes you proceed with the healing process of your acute or
+                  chronic
+                  condition efficiently.
+                </p>
+                <a href="http://shop.arogyambharat.com/" target="_blank" class="text-theme-colored font-13">Read More
+                  →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Divider: Doctor Appointment -->
+<a style="cursor: pointer;" data-toggle="modal" data-target="#myModal">
+  <img style="width: 100%;" src="{% static 'images/appointment-image.jpg' %}">
+</a>
+
+<!-- Section: Services -->
+<section id="services">
+  <div class="container pt-50 pb-50 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
+    <div class="section-title text-center">
+      <div class="row">
+        <div class="title-icon">
+          <img style="height: 40px; text-align: center; margin-top: -20px;" src="{% static 'images/hearbel.png' %}">
+        </div>
+        <div class="col-md-8 col-md-offset-2 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+          <h2 class="text-uppercase mt-0">Our <span class="text-theme-colored">Products</span></h2>
+          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p> -->
+        </div>
+      </div>
+    </div>
+    <div class="row multi-row-clearfix">
+      <div class="col-md-12">
+        <div class="owl-carousel-4col wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s" data-dots="true">
+
+          <div class="item">
+            <div class="campaign bg-silver-light maxwidth500 mb-30">
+              <div class="thumb">
+                <a href="http://shop.arogyambharat.com/" target="_blank">
+                  <img src="{% static 'images/products/jeevan rakshak 500x500.jpg' %}" alt="" class="img-fullwidth">
+                </a>
+              </div>
+              <div class="campaign-details clearfix p-15 text-center">
+                <h4 class="font-weight-600 mt-0"><a href="http://shop.arogyambharat.com/" target="_blank">Jeevan Rakshak
+                    Package</a></h4>
+                <div class="campaign-bottom clearfix ">
+                  <a class="btn btn-xs btn-theme-colored font-weight-600 font-11 flip mt-10 mr-5"
+                    href="http://shop.arogyambharat.com/" target="_blank">View Details</a>
+                  <a class="btn btn-xs btn-theme-colored font-weight-600 font-11 flip mt-10"
+                    href="http://shop.arogyambharat.com/" target="_blank">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="campaign bg-silver-light maxwidth500 mb-30">
+              <div class="thumb">
+                <a href="http://shop.arogyambharat.com/" target="_blank">
+                  <img src="{% static 'images/products/heart-care.jpg' %}" alt="" class="img-fullwidth">
+                </a>
+              </div>
+              <div class="campaign-details clearfix p-15 text-center">
+                <h4 class="font-weight-600 mt-0"><a href="http://shop.arogyambharat.com/" target="_blank">Heart Care
+                    Powder</a></h4>
+                <div class="campaign-bottom clearfix ">
+                  <a class="btn btn-xs btn-theme-colored font-weight-600 font-11 flip mt-10 mr-5"
+                    href="http://shop.arogyambharat.com/" target="_blank">View Details</a>
+                  <a class="btn btn-xs btn-theme-colored font-weight-600 font-11 flip mt-10"
+                    href="http://shop.arogyambharat.com/" target="_blank">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="campaign bg-silver-light maxwidth500 mb-30">
+              <div class="thumb">
+                <a href="http://shop.arogyambharat.com/" target="_blank">
+                  <img src="{% static 'images/products/down-bp.jpg' %}" alt="" class="img-fullwidth">
+                </a>
+              </div>
+              <div class="campaign-details clearfix p-15 text-center">
+                <h4 class="font-weight-600 mt-0"><a href="http://shop.arogyambharat.com/" target="_blank">Down B.P
+                    30Tab</a></h4>
+                <div class="campaign-bottom clearfix ">
+                  <a class="btn btn-xs btn-theme-colored font-weight-600 font-11 flip mt-10 mr-5"
+                    href="http://shop.arogyambharat.com/" target="_blank">View Details</a>
+                  <a class="btn btn-xs btn-theme-colored font-weight-600 font-11 flip mt-10"
+                    href="http://shop.arogyambharat.com/" target="_blank">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="campaign bg-silver-light maxwidth500 mb-30">
+              <div class="thumb">
+                <a href="http://shop.arogyambharat.com/" target="_blank">
+                  <img src="{% static 'images/products/oxyveda 500x500.jpg' %}" alt="" class="img-fullwidth">
+                </a>
+              </div>
+              <div class="campaign-details clearfix p-15 text-center">
+                <h4 class="font-weight-600 mt-0"><a href="http://shop.arogyambharat.com/" target="_blank">Oxyveda</a>
+                </h4>
+                <div class="campaign-bottom clearfix ">
+                  <a class="btn btn-xs btn-theme-colored font-weight-600 font-11 flip mt-10 mr-5"
+                    href="http://shop.arogyambharat.com/" target="_blank">View Details</a>
+                  <a class="btn btn-xs btn-theme-colored font-weight-600 font-11 flip mt-10"
+                    href="http://shop.arogyambharat.com/" target="_blank">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Divider: Be smart,help -->
+<section class="divider parallax layer-overlay overlay-dark-6"
+  data-bg-img="{% static 'images/bg/ocszqyfsxezpsp7lxwhf.jpg' %}" data-parallax-ratio="0.0">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-10 col-md-offset-1 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
+        <p class="text-white">Mission</p>
+        <h2 class="font-30 text-uppercase text-white mt-0 text-uppercase wow fadeInRight" data-wow-duration="1s"
+          data-wow-delay="0.3s"><span class="bharat " style="font-weight: bolder;">Arogyam Bharat</span></h2>
+        <p class="text-white">Bk Arogyam is one of the renewed brands when it's come to Ayurvedic health
+          care Products
+          or Medicines. </p>
+        <a href="http://arogyambharat.com/" target="_blank" class="btn btn-lg btn-theme-colored mt-0">आयुर्वेद =
+          आरोग्यम </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Section: uniq-point -->
+<section id="uniq-point">
+  <div class="container pt-50 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
+          <h2 class="text-uppercase line-bottom mt-0">Our <a href="{% url 'about'%}"><span
+                class="text-theme-colored"><b>Services</b></span></a>
+          </h2>
+
+          <div class="owl-carousel-2col" data-dots="true">
+            <div class="item">
+              <div class="campaign bg-silver-light maxwidth500 mb-30">
+                <div class="thumb">
+                  <img src="{% static 'images/our-service-logo/bk_cancer.jpeg' %}" alt="" class="img-fullwidth">
+                  <div class="campaign-overlay"></div>
+                </div>
+                <div class="campaign-details clearfix p-15">
+                  <h4 class="font-weight-500 mt-0"><a href="http://shop.arogyambharat.com/">Bk Cancer Care</a></h4>
+                  <p class="max-lines">BK Cancer Care is a service brand of BK Arogyam that is able to
+                    provide
+                    treatment
+                    and medications...
+                  </p>
+                  <div class="campaign-bottom clearfix">
+                    <a class="btn btn-xs btn-theme-colored font-weight-600 font-11 pull-left flip mt-10"
+                      href="http://shop.arogyambharat.com/">Read
+                      More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="campaign bg-silver-light maxwidth500 mb-30">
+                <div class="thumb">
+                  <img src="{% static 'images/our-service-logo/bk_corona_care.jpg' %}" alt="" class="img-fullwidth">
+                  <div class="campaign-overlay"></div>
+                </div>
+                <div class="campaign-details clearfix p-15">
+                  <h4 class="font-weight-500 mt-0"><a href="http://shop.arogyambharat.com/">Bk Immunity Booster</a></h4>
+                  <p class="max-lines">During this COVID-19 pandemic breakout where every Research Academy
+                    is
+                    putting...
+                  </p>
+                  <div class="campaign-bottom clearfix">
+                    <a class="btn btn-xs btn-theme-colored font-weight-600 font-11 pull-left flip mt-10"
+                      href="http://shop.arogyambharat.com/">Read
+                      More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="campaign bg-silver-light maxwidth500 mb-30">
+                <div class="thumb">
+                  <img src="{% static 'images/our-service-logo/bk_diabetes.jpeg' %}" alt="" class="img-fullwidth">
+                  <div class="campaign-overlay"></div>
+                </div>
+                <div class="campaign-details clearfix p-15">
+                  <h4 class="font-weight-500 mt-0"><a href="http://shop.arogyambharat.com/">Bk Diabetes Care</a></h4>
+                  <p class="max-lines">BK Diabetes Care as a Health Service brand that is providing
+                    facilities of
+                    diabetes...</p>
+                  <div class="campaign-bottom clearfix">
+                    <a class="btn btn-xs btn-theme-colored font-weight-600 font-11 pull-left flip mt-10"
+                      href="http://shop.arogyambharat.com/">Read
+                      More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="campaign bg-silver-light maxwidth500 mb-30">
+                <div class="thumb">
+                  <img src="{% static 'images/our-service-logo/bk_heart.jpeg' %}" alt="" class="img-fullwidth">
+                  <div class="campaign-overlay"></div>
+                </div>
+                <div class="campaign-details clearfix p-15">
+                  <h4 class="font-weight-500 mt-0"><a href="http://shop.arogyambharat.com/" target="_blank">Bk
+                      Heart Care</a>
+                  </h4>
+                  <p class="max-lines">BK Heart Care is a service brand that provides treatment and
+                    management of all
+                    kinds...</p>
+                  <div class="campaign-bottom clearfix">
+                    <a class="btn btn-xs btn-theme-colored font-weight-600 font-11 pull-left flip mt-10"
+                      href="http://shop.arogyambharat.com/">Read
+                      More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="campaign bg-silver-light maxwidth500 mb-30">
+                <div class="thumb">
+                  <img src="{% static 'images/our-service-logo/KAYA SUDDHI.jpg' %}" alt="" class="img-fullwidth">
+                  <div class="campaign-overlay"></div>
+                </div>
+                <div class="campaign-details clearfix p-15">
+                  <h4 class="font-weight-500 mt-0"><a href="http://shop.arogyambharat.com/">Bk Kaya Shudhi</a></h4>
+                  <p class="max-lines">A combination of mind, body, senses, soul, and Ayurveda is the
+                    knowledge of
+                    life,
+                    the science..</p>
+                  <div class="campaign-bottom clearfix">
+                    <a class="btn btn-xs btn-theme-colored font-weight-600 font-11 pull-left flip mt-10"
+                      href="http://shop.arogyambharat.com/">Read
+                      More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="campaign bg-silver-light maxwidth500 mb-30">
+                <div class="thumb">
+                  <img src="{% static 'images/our-service-logo/bk_kidney.jpeg' %}" alt="" class="img-fullwidth">
+                  <div class="campaign-overlay"></div>
+                </div>
+                <div class="campaign-details clearfix p-15">
+                  <h4 class="font-weight-500 mt-0"><a href="http://shop.arogyambharat.com/" target="_blank">Bk
+                      Kidney Care</a>
+                  </h4>
+                  <p class="max-lines">BK Kidney Care is India's top quality service brand that has cure of
+                    all types
+                    of
+                    kidney diseases...
+                  </p>
+                  <div class="campaign-bottom clearfix">
+                    <a class="btn btn-xs btn-theme-colored font-weight-600 font-11 pull-left flip mt-10"
+                      href="http://shop.arogyambharat.com/" target="_blank">Read
+                      More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
+          <h2 class="text-uppercase line-bottom  mt-0">Our <a href="{% url 'about'%}"><span
+                class="text-theme-colored "><b>Brands</b></span></a>
+          </h2>
+          <div class="owl-carousel-2col" data-dots="true">
+            <div class="item">
+              <div class="campaign bg-silver-light maxwidth500 mb-30">
+                <div class="thumb">
+                  <img src="{% static 'images/brand-logo/arogyavedaa.jpg' %}" alt="" class="img-fullwidth">
+                  <div class="campaign-overlay"></div>
+                </div>
+                <div class="campaign-details clearfix p-15">
+                  <h4 class="font-weight-500 mt-0"><a href="http://shop.arogyambharat.com/">Bk Arogyaveda</a></h4>
+                  <p class="max-lines">BK Arogyaveda in this product brand of BK Arogyam we include all the
+                    cell
+                    researched and manufactured medicines and treatment of all kinds of diseases such as
+                    head ache,
+                    stomach ache, fever to cancer and coronavirus. We have made Ayurvedic treatment and
+                    medications so
+                    easy to be used throughout our Arogyaveda Product Brand. All these products under this
+                    brand are
+                    free of any side effect and manufactured with natural, herbal, and organic ingredients
+                    only.
+                  </p>
+                  <div class="campaign-bottom clearfix">
+                    <a class="btn btn-xs btn-theme-colored font-weight-600 font-11 pull-left flip mt-10"
+                      href="http://shop.arogyambharat.com/">Read
+                      More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="campaign bg-silver-light maxwidth500 mb-30">
+                <div class="thumb">
+                  <img src="{% static 'images/brand-logo/muscleveda (1).jpg' %}" alt="" class="img-fullwidth">
+                  <div class="campaign-overlay"></div>
+                </div>
+                <div class="campaign-details clearfix p-15">
+                  <h4 class="font-weight-500 mt-0"><a href="http://shop.arogyambharat.com/">Bk Muscleveda</a></h4>
+                  <p class="max-lines">BK Muscleveda product brand of BK Arogyam includes range of
+                    health supplements that provides strength to the muscles and tissues of body.
+                  </p>
+                  <div class="campaign-bottom clearfix">
+                    <a class="btn btn-xs btn-theme-colored font-weight-600 font-11 pull-left flip mt-10"
+                      href="http://shop.arogyambharat.com/" target="_blank">Read
+                      More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="campaign bg-silver-light maxwidth500 mb-30">
+                <div class="thumb">
+                  <img src="{% static 'images/brand-logo/nuitriveda.jpg' %}" alt="" class="img-fullwidth">
+                  <div class="campaign-overlay"></div>
+                </div>
+                <div class="campaign-details clearfix p-15">
+                  <h4 class="font-weight-500 mt-0"><a href="http://shop.arogyambharat.com/">Bk Nutriveda</a></h4>
+                  <p class="max-lines">BK Nutriveda is a product brand of the BK Arogyam that provides
+                    Ayurvedic health
+                    supplements and immunity boosters. All the products of this brand are of top quality,
+                    certified, and
+                    these are better than the other multinational organization products.
+                  </p>
+                  <div class="campaign-bottom clearfix">
+                    <a class="btn btn-xs btn-theme-colored font-weight-600 font-11 pull-left flip mt-10"
+                      href="http://shop.arogyambharat.com/">Read
+                      More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="campaign bg-silver-light maxwidth500 mb-30">
+                <div class="thumb">
+                  <img src="{% static 'images/brand-logo/Rupam.jpg' %}" alt="" class="img-fullwidth">
+                  <div class="campaign-overlay"></div>
+                </div>
+                <div class="campaign-details clearfix p-15">
+                  <h4 class="font-weight-500 mt-0"><a href="http://shop.arogyambharat.com/">Bk Rupam</a></h4>
+                  <p class="max-lines">Bk Rupam this BK Rupam product brand of BK Arogyam includes wide
+                    range of skin
+                    care products that are manufactured purely with Ayurvedic ingredients.
+                  </p>
+                  <div class="campaign-bottom clearfix">
+                    <a class="btn btn-xs btn-theme-colored font-weight-600 font-11 pull-left flip mt-10"
+                      href="http://shop.arogyambharat.com/">Read
+                      More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Divider: Be smart,help -->
+<section class="divider parallax layer-overlay overlay-dark-6" data-bg-img="{% static 'images/bg/green.jpg' %}"
+  data-parallax-ratio="0.0">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-10 col-md-offset-1 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
+        <h2 class="font-36 text-uppercase text-white font-weight-600 mt-0 text-uppercase">Your Health Care
+          is, <span class="text-theme-colored">OUR RESPONSIBILITY</span></h2>
+        <p class="text-white">Now avail all the Arogyam benefits via Arogyam Bharat Card.</p>
+        <a href="http://bkarogyadham.com/card/" target="_blank" class="btn btn-lg btn-theme-colored mt-20">Read
+          More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section: Services -->
+<section id="services ">
+  <div class="container pt-50 pb-50 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
+    <div class="section-title text-center">
+      <div class="row">
+        <div class="title-icon">
+          <img style="height: 40px; text-align: center; margin-top: -20px;" src="{% static 'images/hearbel.png' %}">
+        </div>
+        <div class="col-md-8 col-md-offset-2 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
+          <h2 class="text-uppercase mt-0">Letest <a href="{% url 'events'%}"><span
+                class="text-theme-colored">News</a></span></h2>
+          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p> -->
+        </div>
+      </div>
+    </div>
+    <div class="row multi-row-clearfix">
+      <div class="col-md-12">
+        <div class="owl-carousel-4col" data-dots="true">
+
+          {% for i in events%}
+          <div class="schedule-box maxwidth500 bg-lighter mb-30 border-redi">
+            <div class="thumb">
+              <img class="img-fullwidth" alt="" src="https://www.bkarogyam.com/media/{{i.event_image}}">
+            </div>
+            <div class="schedule-details clearfix p-15 pt-10">
+              <h4 class="title mt-0"><a href="{% url 'events_detail' e_id=i.domain %}">{{i.title}}</a></h4>
+              <ul class="list-inline font-11 text-gray">
+                <li><i class="fa fa-calendar mr-5"></i>{{i.event_date}}</li>
+              </ul>
+              <div class="clearfix"></div>
+              <p class="mt-10 max-lines">{{i.content|striptags}}</p>
+              <div class="mt-10">
+                <a style="width: 100%;" class="btn btn-dark btn-theme-colored btn-sm mt-10"
+                  href="{% url 'events_detail' e_id=i.domain %}">Read
+                  More</a>
+              </div>
+            </div>
+          </div>
+          {% endfor%}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Divider: Funfact -->
+<section class="divider parallax layer-overlay overlay-dark-6" data-bg-img="{% static 'images/bg/bg4.jpg' %}"
+  data-parallax-ratio="0.7">
+  <div class="container pt-90 pb-90">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+        <div class="funfact text-center">
+          <i class="pe-7s-smile mt-5 text-white"></i>
+          <h2 data-animation-duration="2000" data-value="102205"
+            class="animate-number text-theme-colored font-42 font-weight-500 mt-0 mb-0">0</h2>
+          <h5 class="text-white text-uppercase font-weight-600">Happy Patients</h5>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+        <div class="funfact text-center">
+          <i class="pe-7s-rocket mt-5 text-white"></i>
+          <h2 data-animation-duration="2000" data-value="2458"
+            class="animate-number text-theme-colored font-42 font-weight-500 mt-0 mb-0">0</h2>
+          <h5 class="text-white text-uppercase font-weight-600">Camps</h5>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+        <div class="funfact text-center">
+          <i class="pe-7s-id mt-5 text-white"></i>
+          <h2 data-animation-duration="2000" data-value="50"
+            class="animate-number text-theme-colored font-42 font-weight-500 mt-0 mb-0">0</h2>
+          <h5 class="text-white text-uppercase font-weight-600">Our Doctor</h5>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+        <div class="funfact text-center">
+          <i class="pe-7s-map-2 mt-5 text-white"></i>
+          <h2 data-animation-duration="2000" data-value="5"
+            class="animate-number text-theme-colored font-42 font-weight-500 mt-0 mb-0">0</h2>
+          <h5 class="text-white text-uppercase font-weight-600">Our Center</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Section: Services -->
+<section id="services">
+  <div class="container pt-50 pb-50 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
+    <div class="section-title text-center">
+      <div class="row">
+        <div class="title-icon">
+          <img style="height: 40px; text-align: center; margin-top: -20px;" src="{% static 'images/hearbel.png' %}">
+        </div>
+        <div class="col-md-8 col-md-offset-2 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+          <h2 class="text-uppercase mt-0">Letest <a href="{% url 'blogs'%}"><span
+                class="text-theme-colored">Blogs</a></span></h2>
+          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p> -->
+        </div>
+      </div>
+    </div>
+    <div class="row multi-row-clearfix">
+      <div class="col-md-12">
+        <div class="owl-carousel-4col" data-dots="true">
+
+
+          {% for i in blogs %}
+          <article class="post clearfix bg-lighter mb-sm-30 border-redi" data-wow-duration="1s" data-wow-delay="0.3s">
+            <div class="entry-header">
+              <div class="post-thumb thumb">
+                <img src="https://www.bkarogyam.com/media/{{i.featured_image}}" alt=""
+                  class="img-responsive img-fullwidth">
+              </div>
+            </div>
+            <div class="entry-content p-20">
+              <h4 class="entry-title text-white text-uppercase heading"><a class="font-weight-600"
+                  href="{% url 'blogs_details' b_id=i.slug %}">{{i.title}}</a></h4>
+              <div class="entry-meta">
+                <ul class="list-inline font-12 mb-10">
+                  <li><i class="fa fa-user text-theme-colored mr-5"></i>By: Bk Arogyam / </li>
+                  <li><i class="fa fa-calendar text-theme-colored mr-5"></i>{{i.updated_on}}</li>
+                </ul>
+              </div>
+              <p class="mt-5 max-lines">{{i.content|striptags}}</p>
+              <a style="width: 100%;" class="btn btn-theme-colored btn-sm mt-10"
+                href="{% url 'blogs_details' b_id=i.slug %}"> View
+                Details</a>
+            </div>
+          </article>
+          {% endfor%}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Diver: Video Background  -->
+<section class="divider parallax layer-overlay overlay-dark-6" data-bg-img="{% static 'images/bg/doctor.jpg' %}"
+  data-parallax-ratio="0.7">
+  <div class="container pt-70 pb-70">
+    <!-- Section Content -->
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <h3 class="text-white text-uppercase font-30 font-weight-600 mt-0">Watch Our Latest consultant
+            video</h3>
+          <p class="text-white mt-0 mb-20">Ayurvedic treatment for Polycystic Kidney disease is an effective
+            way to
+            treat this kidney condition. With the use of natural herbs, the kidneys can be healed...</p>
+          <a href="https://www.youtube.com/channel/UC-XhvCY2edCeY6efc4L1jew" target="_blank"><i
+              class="fa fa-play-circle text-theme-colored font-72"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Section: Gallery -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-7 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
+          <h3 class="text-uppercase title line-bottom mt-0 mb-30"><i
+              class="fa fa-image text-gray-darkgray mr-10"></i>Photo <a href="{% url 'gallery'%}"><span
+                class="text-theme-colored"><b>Gallery</b></span></a>
+          </h3>
+          <!-- Portfolio Gallery Grid -->
+
+          <div class="gallery-isotope grid-4 gutter-small clearfix" data-lightbox="gallery">
+
+            {% for i in gallery%}
+            <!-- Portfolio Item Start -->
+            <div class="gallery-item">
+              <div class="thumb">
+                <img alt="project" src="{{i.gallery_img.url}}" class="img-fullwidth">
+                <div class="overlay-shade"></div>
+                <div class="icons-holder">
+                  <div class="icons-holder-inner">
+                    <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                      <a href="{{i.gallery_img.url}}" data-lightbox-gallery="gallery"><i
+                          class="fa fa-picture-o"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio Item End -->
+            {% endfor%}
+
+
+          </div>
+          <!-- End Portfolio Gallery Grid -->
+        </div>
+        <div class="col-md-5 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
+          <h3 class="text-uppercase title line-bottom mt-0 mb-30 mt-sm-40"><i
+              class="fa fa-comment text-gray-darkgray mr-10"></i>Patient <span
+              class="text-theme-colored"><b>Testimonials</b></span></h3>
+
+          <div class="bxslider bx-nav-top" data-count="2">
+            {% for i in testimonial %}
+
+            <div class="event media sm-maxwidth400 p-15 mt-0 mb-15">
+              <div class="testimonial pt-10">
+                <div class="thumb pull-left mb-0 mr-0 pr-20">
+                  <img width="75" class="img-circle" alt="" src="{{i.user_img.url}}">
+                </div>
+                <div class="ml-100 ">
+                  <p>{{i.testimonial}}</p>
+                  <p class="author mt-10">- <span class="text-theme-colored">{{i.name}}</span></p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+
+            {% for i in testimonial %}
+
+            <div class="event media sm-maxwidth400 p-15 mt-0 mb-15">
+              <div class="testimonial pt-10">
+                <div class="thumb pull-left mb-0 mr-0 pr-20">
+                  <img width="75" class="img-circle" alt="" src="{{i.user_img.url}}">
+                </div>
+                <div class="ml-100 ">
+                  <p>{{i.testimonial}}</p>
+                  <p class="author mt-10">- <span class="text-theme-colored">{{i.name}}</span></p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

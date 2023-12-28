@@ -1,0 +1,184 @@
+{% extends "./base.html" %} {% block body %} {% load static %}
+
+<style>
+    .join-btn:hover {
+        color: black !important;
+        border-radius: 15px !important;
+        background-color: white !important;
+        border-style: solid;
+        border-width: 2px 2px 2px 2px;
+        border-color: #029077;
+        box-shadow: 0px 0px 10px 0px grey;
+        transition: all .3s;
+    }
+
+    .join-btn {
+        padding: 10px;
+        border-radius: 15px !important;
+        color: white;
+        background-color: #029077;
+        border-style: solid;
+        border-width: 2px 2px 2px 2px;
+        border-color: white;
+        box-shadow: 0px 0px 10px 0px grey;
+        transition: all .3s;
+    }
+
+
+    .nav-tabs>li.active a,
+    .nav-tabs>li.active a:hover,
+    .nav-tabs>li.active a:focus {
+        color: #fff;
+        font-size: small;
+        font-weight: bolder;
+        border-radius: 20px;
+        background-color: #029077;
+        transition: all .3s;
+    }
+
+    .nav-tabs {
+        box-shadow: 0px 0px 10px 0px grey;
+        border-radius: 20px;
+    }
+
+    .nav-tabs.nav-justified>li>a {
+        border-bottom: 1px solid transparent !important;
+        border: 1px solid transparent !important;
+    }
+
+    .nbsp {
+        white-space: nowrap;
+    }
+</style>
+<!-- Section: inner-header -->
+<section class="inner-header divider parallax layer-overlay overlay-dark-5">
+    <div class="container pt-20 pb-20">
+        <!-- Section Content -->
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="title text-white">Medicine</h4>
+                    <!-- <ul class="breadcrumb white">
+                <li><a class="text-white" href="/arogyam/">arogyam</a></li>
+                <li class="active">Events</li>
+              </ul> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Section: Diseases -->
+<section id="data">
+    <div class="container">
+        <ul style="padding:7px" class="nav nav-tabs nav-justified ">
+            <li  role="presentation"><a href="#profile3" data-toggle="tab">Search by Allopath</a></li>
+            <li class="active" role="presentation"><a href="#profile2" data-toggle="tab">Search by Ayurveda</a></li>
+        </ul>
+
+        <div id="myTabContent2" style="border: 0px solid #eeeeee !important;" class="tab-content in active mt-20">
+
+            <div class="tab-pane fade in active" id="profile2">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="form_name">Ayurveda Medicine<small>*</small></label>
+                            <select onchange="location = this.value;" id="form_subject" name="subject"
+                                class="form-control required" type="text" placeholder="Select Category">
+                                <option value="">Select Ayurveda Medicine</option>
+                                {% for i in ayurveda_medicine_name%}
+                                <option value="ayurveda_allopath?ayurveda_name={{i.id}}">{{i.name}}</option>
+                                {%endfor%}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            {% for i in ayurveda_medicine%}
+                            <hr>
+                            <h4><b>{{i.name}}</b></h4>
+                            <hr>
+                            {%endfor%}
+                            <h5><b class="widget-title line-bottom mt-20">Description</b></h5>
+                            {% for i in ayurveda_medicine%}
+                            <p class="mt-20">{{i.description|safe | escape}}</p>
+                            {%endfor%}
+                            <h5><b class="widget-title line-bottom">Benefit</b></h5>
+                            {% for i in ayurveda_medicine%}
+                            <p class="mt-20">{{i.benefit|safe | escape}}</p>
+                            {%endfor%}
+                        </div>
+
+                        {% for i in ayurveda_medicine%}
+                        <div class="col-md-4">
+                            <img src="https://bkarogyam.com/media/{{i.image}}" alt="medicine_img">
+                        </div>
+                        {%endfor%}
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="tab-pane fade  " id="profile3">
+                <div class="row">
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="form_name">Allopath Medicine<small>*</small></label>
+                            <select onchange="location = this.value;" id="form_subject" name="subject"
+                                class="form-control required" type="text" placeholder="Select Category">
+                                <option value="select_allopath">Select Allopath Medicine</option>
+                                {% for i in allopath_name%}
+                                <option value="allopath_ayurveda?product_name={{i.id}}">{{i.name}}</option>
+                                {%endfor%}
+                            </select>
+                        </div>
+                    </div>
+
+                   
+
+                    <!-- <div class="col-md-12">
+                        <div style="padding: 143px !important; text-align: center !important;"
+                            class="alert alert-success">
+                            <h5>Select Allopath Medicine</h5>
+                        </div>
+                    </div> -->
+
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            {% for i in allopath_ayurveda%}
+                            <hr>
+                            <h4><b>{{i.name}}</b></h4>
+                            <hr>
+                            {%endfor%}
+                            <h5><b class="widget-title line-bottom mt-20">Description</b></h5>
+                            {% for i in allopath_ayurveda%}
+                            <p class="mt-20">{{i.description|safe | escape}}</p>
+                            {%endfor%}
+                            <h5><b class="widget-title line-bottom">Side Effects</b></h5>
+                            {% for i in allopath_ayurveda%}
+                            <p class="mt-20">{{i.benefit|safe | escape}}</p>
+                            {%endfor%}
+                        </div>
+
+                        {% for i in allopath_ayurveda%}
+                        <div class="col-md-4">
+                            <img src="https://bkarogyam.com/media/{{i.image}}" alt="medicine_img">
+                        </div>
+                        {%endfor%}
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

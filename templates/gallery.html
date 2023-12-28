@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% block body %} {% load static %}
+
+<!-- Section: inner-header -->
+<section class="inner-header divider parallax layer-overlay overlay-dark-5" data-parallax-ratio="0.0">
+    <div class="container pt-20 pb-20">
+        <!-- Section Content -->
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="title text-white">Gallery</h4>
+                    <!-- <ul class="breadcrumb white">
+                        <li><a class="text-white" href="{% url 'index'%}">Home</a></li>
+                        <li class="active">About</li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Gallery Grid 4 -->
+<section>
+    <div class="container-fluid pb-0">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <!-- Portfolio Gallery Grid -->
+                    <div id="grid" class="gallery-isotope grid-4 gutter clearfix">
+                        {% for i in gallery%}
+                        <!-- Portfolio Item Start -->
+                        <div class="gallery-item">
+                            <div class="thumb">
+                                <img alt="project" src="{{i.gallery_img.url}}"
+                                    class="img-fullwidth">
+                                <div class="overlay-shade"></div>
+                                <div class="icons-holder">
+                                    <div class="icons-holder-inner">
+                                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                                            <a href="{{i.gallery_img.url}}"
+                                                data-lightbox-gallery="gallery"><i class="fa fa-picture-o"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Portfolio Item End -->
+                        {% endfor%}
+                    </div>
+                    <!-- End Portfolio Gallery Grid -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

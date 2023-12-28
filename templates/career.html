@@ -1,0 +1,144 @@
+{% extends 'base.html' %} {% block body %} {% load static %}
+<style>
+    .layer-overlay.overlay-dark-5::before {
+        background-color: rgb(2 144 119 / 46%) !important;
+    }
+
+    .join-btn {
+        padding: 10px;
+        border-radius: 15px;
+        color: black;
+        background-color: white;
+        border-style: solid;
+        border-width: 2px 2px 2px 2px;
+        border-color: #029077;
+        box-shadow: 0px 0px 10px 0px grey;
+        transition: all .3s;
+    }
+
+    .join-btn:hover {
+        padding: 10px;
+        border-radius: 15px;
+        color: white;
+        background-color: #029077;
+        border-style: solid;
+        border-width: 2px 2px 2px 2px;
+        border-color: white;
+        box-shadow: 0px 0px 10px 0px grey;
+        transition: all .3s;
+    }
+</style>
+<!-- Section: inner-header -->
+<section class="divider parallax layer-overlay overlay-dark-5" data-parallax-ratio="0.0"
+    data-bg-img="{% static 'images/bg/OurTeam_Header_1920.webp' %}">
+    <div class="pt-20 pb-20">
+        <!-- Section Content -->
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div style="padding-left: 0px !important;" class="col-md-5">
+                        <img style="border-radius: 0 20px 20px 0; "
+                            src="{% static 'images/career/pexels-fauxels-3184465-1024x683.jpg' %}" alt="">
+                    </div>
+                    <div class="col-md-6 m-20">
+                        <h2 style="font-size: 1.1rem; font-family: Merriweather !important; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;"
+                            class=" font-weight-600 text-white">Career @ Bk Arogyam</h2>
+                        <h2 class="font-weight-600 text-white "
+                            style="line-height: 1em; font-size: 4rem; font-family: Merriweather !important">
+                            Join Our Team</h2>
+                        <p class="text-white font-16">
+                            Join Our Team to explore the Opportunities to grow together with Bk Arogyam.
+                        </p>
+                        <br>
+                        <a class="join-btn" href="#job">Join Our Team <i style="font-size: 13px; font-weight: bolder;"
+                                class="pe-7s-check"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div id="job" class="container">
+        <div class="section-content">
+            <div class="row">
+
+                {% for i in job %}
+                <div style="border-radius: 20px !important;" class="col-xs-12 col-sm-6 col-md-4 wow fadeInLeft mb-20
+                    data-wow-duration="1s" data-wow-delay="0.3s">
+                    <article style="height: 375px;" class="border-redi post clearfix bg-lighter mb-sm-30">
+                        <div class="entry-header">
+                            <div class="post-thumb thumb">
+                                <img style="height: 235px !important;" src="https://www.bkarogyam.com/media/{{i.image}}" alt=""
+                                    class="img-responsive img-fullwidth">
+                            </div>
+                        </div>
+                        <div class="entry-content heading text-center p-20">
+                            <h4 class="entry-title text-white text-uppercase heading"><a class="font-weight-600"
+                                    data-toggle="modal" data-target="#jobApply" style="cursor: pointer;">{{i.title}}</a>
+                            </h4>
+                            <a class="btn btn-theme-colored btn-sm mt-10" data-toggle="modal" data-target="#jobApply"
+                                style="cursor: pointer;"> Apply Now</a>
+                        </div>
+                    </article>
+                </div>
+                {% endfor%}
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="jobApply" tabindex="-1" role="dialog" aria-labelledby="jobApplyLabel">
+    <div class="modal-dialog" role="document">
+        <div class=" border-redi modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="jobApplyLabel">Apply Form</h4>
+            </div>
+            <div class="modal-body">
+                <form id="career_form" name="career_form" class="" action="{{career}}" method="POST"
+                    enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="">
+                        <label>Name</label>
+                        <input style="border-radius: 5px;" name="name" type="text" class="form-control required">
+                        <label>Email Address</label>
+                        <input style="border-radius: 5px;" name="email" type="email" class="form-control required">
+                        <label>Mobile Number</label>
+                        <input style="border-radius: 5px;" name="mobileno" type="number" class="form-control required">
+                        <label>Address</label>
+                        <input style="border-radius: 5px;" name="address" type="text" class="form-control">
+                        <label>Qualification</label>
+                        <input style="border-radius: 5px;" name="qualification" type="text" class="form-control">
+                        <label>Apply For</label>
+                        <select style="border-radius: 5px;" name="applyfor" type="text" class="form-control required">
+                            {% for i in job %}
+                            <option class="form-control">{{i.title}}</option>
+                            {% endfor%}
+                        </select>
+                        <br>
+                        <label for="exampleInput File2">Resume Upload</label>
+                        <input type="file" name="img" id="exampleInput File2">
+                        <hr>
+                        <div style="float: right;" class="form-group">
+                            <button type="submit" class="btn btn-default">Apply Now</button>
+                        </div>
+                        <br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}

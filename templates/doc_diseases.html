@@ -1,0 +1,833 @@
+{% extends "./base.html" %} {% block body %} {% load static %}
+
+<style>
+    .layer-overlay.overlay-dark-5::before {
+        background-color: rgb(2 144 119 / 46%) !important;
+    }
+
+    .join-btn:hover {
+        color: black !important;
+        border-radius: 15px !important;
+        background-color: white !important;
+        border-style: solid;
+        border-width: 2px 2px 2px 2px;
+        border-color: #029077;
+        box-shadow: 0px 0px 10px 0px grey;
+        transition: all .3s;
+    }
+
+    .join-btn {
+        padding: 10px;
+        border-radius: 15px !important;
+        color: white;
+        background-color: #029077;
+        border-style: solid;
+        border-width: 2px 2px 2px 2px;
+        border-color: white;
+        box-shadow: 0px 0px 10px 0px grey;
+        transition: all .3s;
+    }
+
+
+    .nav-tabs>li.active a,
+    .nav-tabs>li.active a:hover,
+    .nav-tabs>li.active a:focus {
+        color: #fff;
+        font-size: small;
+        font-weight: bolder;
+        border-radius: 20px;
+        background-color: #029077;
+        transition: all .3s;
+    }
+
+    .nav-tabs {
+        box-shadow: 0px 0px 10px 0px grey;
+        border-radius: 20px;
+    }
+
+    .nav-tabs.nav-justified>li>a {
+        border-bottom: 1px solid transparent !important;
+        border: 1px solid transparent !important;
+    }
+</style>
+<!-- Section: inner-header -->
+<section class="divider parallax layer-overlay overlay-dark-5" data-parallax-ratio="0.0"
+    data-bg-img="{% static 'images/bg/doctor.jpg' %}">
+    <div class="pt-20 pb-20">
+        <!-- Section Content -->
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div style="padding-left: 0px !important;" class="col-md-5">
+                        <div class="owl-carousel-1col" data-nav="true">
+                            {% for i in doctor_slider%}
+                            <div class="item">
+                                <img style="border-radius: 0 20px 20px 0; " src="{{i.dc_img.url}}" alt="">
+                            </div>
+                            {%endfor%}
+                        </div>
+                    </div>
+                    <div class="col-md-6 m-20">
+                        <h2 style="font-size: 1.1rem; font-family: Merriweather !important; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;"
+                            class=" font-weight-600 text-white">Doctor @ B.k. Arogyam</h2>
+                        <h2 class="font-weight-600 text-white "
+                            style="line-height: 1em; font-size: 4rem; font-family: Merriweather !important">
+                            Hello Dr. <span class="text-theme-colored"
+                                style="text-shadow: 0px 0px 12px #fff;">{{doctor_info.name}}</span> </h2>
+                        <p class="text-white font-16">
+                            You can see here all diseases...
+                        </p>
+                        <br>
+                        <a class="join-btn" href="#data">Product Order <i style="font-size: 13px; font-weight: bolder;"
+                                class="pe-7s-check"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Section: Diseases -->
+<section id="data">
+    <div class="container">
+        <ul style="padding:7px" class="nav nav-tabs nav-justified">
+            <li class="active" role="presentation"><a href="#profile3" data-toggle="tab">Product Order</a></li>
+            <li role="presentation"><a href="#home2" data-toggle="tab">Disease</a></li>
+            <li role="presentation"><a href="#profile2" data-toggle="tab">Download</a></li>
+            <li role="presentation"><a href="#profile4" data-toggle="tab">Profile</a></li>
+        </ul>
+
+        <div id="myTabContent2" style="border: 0px solid #eeeeee !important;" class="tab-content mt-20">
+            <div class="tab-pane fade" id="home2">
+                <div class="section-title text-center">
+                    <div class="row">
+                        <!-- <div class="title-icon">
+                            <img style="height: 40px; text-align: center; margin-top: -20px;"
+                                src="{% static 'images/hearbel.png' %}">
+                        </div> -->
+                        <div class="col-md-8 col-md-offset-2 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                            <h2 class="text-uppercase mt-0">Find<span class="text-theme-colored"> Diseases</span></h2>
+                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row multi-row-clearfix">
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=15" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/kidney.jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">Kidney
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=16" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/2 (1).jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">Diabetes
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=17" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/3.jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">Emergency
+                                    </h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=35" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/4.jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">Heart
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=36" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/5.jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">Neuro
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=37" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/7.jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">Cancer
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=38" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/6.jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">Anorectal
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=39" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/8.jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">Obesity
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=40" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/9.jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">Joint
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=41" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/10.jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">Thyroid
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=42" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/11.jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">Gastro
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=43" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/12.jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">Gaino
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=44" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/13.jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">Prostate
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=45" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/14.jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">
+                                        respiratory
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=46" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/15.jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">Skin
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=47" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/16.jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">CHild
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=48" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/17.jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">Immune
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=58" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/23 (1).jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">Sexual
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=59" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/18 (1).jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">
+                                        Infertility
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=60" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/19 (1).jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">Liver
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=61" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/20 (1).jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">Stone
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=62" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/21 (1).jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">
+                                        Spondylitis
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft mb-10" data-wow-duration="3s"
+                        data-wow-delay="0.3s">
+                        <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                            <a href="http://shop.arogyambharat.com/category.html?pcategory=63" target="_blank">
+                                <div class="entry-header">
+                                    <div class="post-thumb thumb">
+                                        <img src="{% static 'images/icon/22 (1).jpg' %}" alt=""
+                                            class="img-responsive img-fullwidth">
+                                    </div>
+                                </div>
+                                <div class="entry-content p-20">
+                                    <h4 class="entry-title text-uppercase text-center heading font-weight-600">ADDICTION
+                                        Problem</h4>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="profile2">
+
+                {% for i in doctor_doc %}
+                <div class="col-xs-12 col-sm-6 mb-10 col-md-4 wow fadeInLeft" data-wow-duration="1s"
+                    data-wow-delay="0.3s">
+                    <article class="border-redi post clearfix bg-lighter mb-sm-30">
+                        <div class="entry-header">
+                            <div class="post-thumb thumb">
+                                <img src="{{i.doctor_cover_image.url}}" alt="" class="img-responsive img-fullwidth">
+                            </div>
+                        </div>
+                        <div class="entry-content p-20">
+                            <h4 class="entry-title text-white text-uppercase"><a class="font-weight-600"
+                                    href="{{i.doctor_documet.url}}" target="_blank">{{i.doctor_tittle}}</a>
+                            </h4>
+                            <p class="mt-5 max-lines">{{i.doctor_description}}</p>
+                            <div class="text-center">
+                                <a class="btn btn-theme-colored btn-sm mt-10" href="{{i.doctor_documet.url}}"
+                                    target="_blank">Read</a>
+                                <a class="btn btn-theme-colored btn-sm mt-10" href="{{i.doctor_documet.url}}"
+                                    download>Download</a>
+                            </div>
+                    </article>
+                </div>
+                {%endfor%}
+
+            </div>
+
+            <div class="tab-pane fade  in active" id="profile3">
+                <!-- Contact Form -->
+                <form id="doctor_po" name="doctor_po" class="" action="{{doctor_diseases}}" method="POST"
+                    aria-multiselectable="true">
+                    {% csrf_token %}
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="form_name">Product Category <small>*</small></label>
+                            <select onchange="location = this.value;" id="form_subject" name="subject"
+                                class="form-control required" type="text" placeholder="Select Category">
+                                <option value="">Choose Category</option>
+                                {% for i in category%}
+                                <option value="doctor_diseases?product_category={{i.id}}">{{i.category}}</option>
+                                {%endfor%}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="form_name">Products <small>*</small></label>
+
+                            <table class="table table-condensed table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center;">Products</th>
+                                        <th style="text-align: center;">Price</th>
+                                        <th style="text-align: center;">Details</th>
+                                        <th style="text-align: center;">Qty</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in product%}
+                                    <tr aria-required="true">
+                                        <td style="text-align: center; padding-left: 20px;"><input type="checkbox"
+                                                value="{{i.id}}" name="po_product[]"> {{i.product_tittle}}</td>
+                                        <td style="text-align: center; padding-left: 20px;">₹ {{i.product_price}}</td>
+                                        <td style="text-align: center; padding-left: 20px;">
+                                            <a type="button" class="btn btn-default btn-xs" data-toggle="modal"
+                                                data-target="#myModal{{i.id}}" href="{{i.id}}">Details
+                                            </a>
+                                        </td>
+                                        <td style="text-align: center; padding-left: 20px;"><input class="form-control"
+                                                type="number" name="po_qty{{i.id}}">
+                                        </td>
+                                    </tr>
+                                    {%endfor%}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="form_name">Name <small>*</small></label>
+                            <input id="form_name" name="po_doctor_name" class="form-control" type="text"
+                                placeholder="Enter Name" required="true"
+                                value="{{doctor_info.name}} {{doctor_info.last_name}}">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="form_name">Number <small>*</small></label>
+                            <input id="form_number" name="po_phoneno" class="form-control" type="text"
+                                placeholder="Enter Number" required="true" value="{{doctor_info.mobileno}}">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="form_name">Message</label>
+                            <textarea id="form_message" name="po_doc_messages" class="form-control required" rows="4"
+                                placeholder="Enter Message"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="" />
+                        <button style="float: right;" type="submit" class="btn btn-dark btn-theme-colored mr-5"
+                            data-loading-text="Please wait...">Order</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tab-pane fade" id="profile4">
+                <!-- Contact Form -->
+                <form id="doctor_detail" name="doctor_detail" action="/doctor_profile/{{doctor_info.id}}"
+                    enctype="multipart/form-data" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="form_name">First Name <small>*</small></label>
+
+                                <input id="form_name" name="name" class="form-control" type="text"
+                                    placeholder="First Name" required="true" value="{{doctor_info.name}}">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="form_name">Last Name <small>*</small></label>
+
+                                <input id="form_name" name="last_name" class="form-control" type="text"
+                                    placeholder="Last Name" required="true" value="{{doctor_info.last_name}}">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="form_mob">Mobile <small>*</small></label>
+                                <input id="mobileno" name="mobileno" class="form-control" type="number"
+                                    placeholder="Enter Mobile Number" required="true" value="{{doctor_info.mobileno}}">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="form_email">Email <small>*</small></label>
+                                <input id="form_email" name="email" class="form-control" type="email"
+                                    placeholder="Enter Email" required="true" value="{{doctor_info.email}}">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="form_name">Speciality <small>*</small></label>
+                                <input id="form_speciality" name="speciality" class="form-control" type="text"
+                                    placeholder="Enter Speciality" required="true" value="{{doctor_info.speciality}}">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="form_name">Gender <small>*</small></label>
+                                <select id="form_subject" name="gender" class="form-control required" type="text"
+                                    placeholder="Select Gender" value="{{doctor_info.gender}}">
+                                    <option value="{{doctor_info.gender}}" aria-required="true">{{doctor_info.gender}}
+                                    </option>
+                                    <option value="Male" aria-required="true">Male</option>
+                                    <option value="Female" aria-required="true">Female</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="form_name">Education Qualification <small>*</small></label>
+                                <input id="form_education" name="education_qualification" class="form-control"
+                                    type="text" placeholder="Enter Education Qualification" required="true"
+                                    value="{{doctor_info.education_qualification}}">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="form_name">Registration <small>*</small></label>
+                                <input class="form-control" type="file" name="registration_img" id="exampleInput File2"
+                                    value="{{doctor_info.registration_img}}">
+                                    <a href="{{doctor_info.registration_img.url}}">See Image</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button"> × </button>
+                        We are asking you for Resgistration details because you are join our core team.
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="form_name">Profile Image (251x431)<small>*</small></label>
+                                <input class="form-control" type="file" name="profile_img"
+                                    data-="{{doctor_info.profile_img}}" id="exampleInput File3"
+                                    value="{{doctor_info.profile_img}}">
+                                    <a href="{{doctor_info.profile_img.url}}">See Image</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="form_name">Year of experience <small>*</small></label>
+                                <input id="form_experience" name="experience" class="form-control" type="number"
+                                    placeholder="Enter Year of experience" required="true"
+                                    value="{{doctor_info.experience}}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="form_name">Add Bio</label>
+                        <textarea name="doc_about" class="form-control required" rows="4" placeholder="Add Bio"
+                            value="{{doctor_info.doc_about}}">{{doctor_info.doc_about}}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="" />
+                        <button style="float: right;" type="submit" class="btn btn-dark btn-theme-colored mr-5"
+                            data-loading-text="Please wait...">Update Profile</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- Modal -->
+{% for i in product%}
+<div class="modal fade" id="myModal{{i.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">
+                    
+                    {{i.product_tittle}}
+                    
+                </h4>
+            </div>
+            <div class="modal-body">
+                <p>{{i.product_details|safe | escape}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor%}
+{% endblock %}

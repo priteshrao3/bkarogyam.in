@@ -1,0 +1,38 @@
+{% extends "./base.html" %} {% block body %} {% load static %}
+<!-- Section: home -->
+<section class="divider fullscreen bg-lighter">
+    <div class="display-table">
+        <div class="display-table-cell">
+            <div style="padding-top: 0px !important;" class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-push-3 pt-0">
+                        <h2 class="font-weight-600 ">
+                            Employee <span class="text-theme-colored">Login</span>
+                        </h2>
+                        <hr>
+                        <form id="doc_login" name="doc_login" class="clearfix" action="{{doctor_login}}" method="POST">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="name">User</label>
+                                    <input id="name" name="user" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="password">Password</label>
+                                    <input id="password" name="password" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="clear text-center pt-10">
+                                <button type="submit" class="btn btn-dark btn-lg btn-block no-border mt-15 mb-15"
+                                    >Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

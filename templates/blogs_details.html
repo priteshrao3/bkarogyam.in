@@ -1,0 +1,103 @@
+{% extends "./base.html" %} {% block body %} {% load static %}
+
+<!-- Section: inner-header -->
+<section class="inner-header divider parallax layer-overlay overlay-dark-5">
+    <div class="container pt-20 pb-20">
+        <!-- Section Content -->
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="title text-white">Blogs</h4>
+                    <!-- <ul class="breadcrumb white">
+                <li><a class="text-white" href="/arogyam/">arogyam</a></li>
+                <li class="active">Events</li>
+              </ul> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Blog -->
+<section>
+    <div class="container mt-30 mb-30 pt-30 pb-30">
+        <div class="row">
+            <div class="col-md-9">
+                {% for i in blogs%}
+                    {%ifequal i.slug b_id %}
+
+                <div class="blog-posts single-post">
+                    <article class="post clearfix mb-0">
+                        <div class="entry-header">
+                            <div class="post-thumb thumb"> <img src="https://www.bkarogyam.com/media/{{i.featured_image}}" alt=""
+                                    class="img-responsive img-fullwidth"> </div>
+                        </div>
+                        <div class="entry-content">
+                            <div class="entry-meta media no-bg no-border mt-15 pb-20">
+                                <div
+                                    class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
+                                    <ul>
+                                        <li class="font-16 text-white font-weight-600">{{i.updated_on}}</li>
+                                    </ul>
+                                </div>
+                                <div class="media-body pl-15">
+                                    <div class="event-content pull-left flip">
+                                        <h4 class="entry-title text-white text-uppercase m-0"><a href="#">{{i.title}}</a></h4>
+                                        <span class="mb-10 text-gray-darkgray mr-10 font-13"><i
+                                                class="fa fa-commenting-o mr-5 text-theme-colored"></i> 214
+                                            Comments</span>
+                                        <span class="mb-10 text-gray-darkgray mr-10 font-13"><i
+                                                class="fa fa-heart-o mr-5 text-theme-colored"></i> 895 Likes</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mb-15">{{i.content|safe | escape}}</p>
+                            <div class="mt-30 mb-0">
+                                <h5 class="pull-left mt-10 mr-20 text-theme-colored">Share:</h5>
+                                <ul class="styled-icons icon-dark icon-bordered icon-rounded icon-theme-colored">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                {%endifequal%}
+                {% endfor%}
+
+            </div>
+            <div class="col-md-3">
+                <div class="sidebar sidebar-left mt-sm-30">
+                    <div class="widget">
+                        <h5 class="widget-title line-bottom">Diseases</h5>
+                        <div class="categories">
+                            <ul class="list list-border angle-double-right">
+                                <li><a href="#">Kidney</a></li>
+                                <li><a href="#">Diabetes</a></li>
+                                <li><a href="#">Heart</a></li>
+                                <li><a href="#">Hair Fall</a></li>
+                                <li><a href="#">Joint Pain</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget">
+                    <h5 class="widget-title line-bottom">Tags</h5>
+                    <div class="tags">
+                        <a href="#">arogyam</a>
+                        <a href="#">disease</a>
+                        <a href="#">blog</a>
+                        <a href="#">product</a>
+                        <a href="#">videos</a>
+                        <a href="https://bkarogyam.com/careers">careers</a>
+                        <a href="#">contact</a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}
